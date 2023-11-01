@@ -24,7 +24,42 @@ body input {
   outline: none;
   border: none;
   background: #111;
+  color: #fff;
   margin: 4px 0;
   border-radius: 4px;
   padding: 4px;
+}
+
+input:focus {
+  background: #000;
+  transform: scale(1.1);
+}
+
+.income input {
+  width: 20%;
+}
+.income #total {
+  background: #a00d02;
+  padding: 5px 2px;
+  border-radius: 4px;
+}
+.income #total::before {
+  content: "Total :";
+}
+
+button {
+  width: 100%;
+  height: 45px;
+  border: none;
+  cursor: pointer;
+  background: #047495;
+  color: #fff;
+  font-size: 40px;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+button:hover {
+  background: #01516a;
+  letter-spacing: 1px;
 }/*# sourceMappingURL=index.css.map */
