@@ -50,11 +50,12 @@ input:focus {
 button{
     width: 100%;
     height: 45px;
+    margin: 4px 0;
     border: none;
     cursor: pointer;
     background: #047495;
     color: #fff;
-    font-size: 40px;
+    font-size: 25px;
     border-radius: 20px;
     transition:0.5s ;
   
@@ -62,4 +63,30 @@ button{
 button:hover{
     background: #01516a;
     letter-spacing: 1px;
+    }
+    .btnSearch{
+        display: flex;
+        justify-content: space-between;
+        button{
+            width: 40%;
+        }
+
+    }
+    table{
+        width: 100%;
+        text-align: center;
+        th{
+text-transform: uppercase;
+padding: 5px;
+        }
+        td{
+            
+            padding: 5px; 
+            button{
+                width: 90%;
+                height: 30px;
+                font-size: 20px;
+            
+            }
+        }
     }
