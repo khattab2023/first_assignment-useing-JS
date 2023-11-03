@@ -35,7 +35,7 @@ function getTotal(){
 
 
 //* Save the entered data
-
+if (loca)
 let dataPro =[];
 
 submit.onclick = function(){
@@ -49,8 +49,10 @@ submit.onclick = function(){
     total:total.innerHTML,
     category:month.value,
   }
+  dataPro.push(newPro)
+  localStorage.setItem("users",   JSON.stringify(dataPro)  )
   console.log (newPro)
-  
+
 }
 
 
