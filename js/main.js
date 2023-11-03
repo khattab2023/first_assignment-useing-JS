@@ -24,8 +24,15 @@ function getTotal(){
     let result = +income.value - (+rent.value + +food.value + +services.value);
     //*add + before (inbut-string)  to change to number
     total.innerHTML = result;
+    total.style.background = "#040"
+  }
+  //* if i have no data Empty the writing field and return the total's color to red again
+  else{
+    total.innerHTML = "";
+    total.style.background = "#a00d02"
   }
 }
+
 // *function getsubmit() {
 //*   return this.element;
 //* }
