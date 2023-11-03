@@ -4,12 +4,12 @@ let rent = document.getElementById("rent");
 let food = document.getElementById("food");
 let services = document.getElementById("services");
 let total = document.getElementById("total");
-let month = document.getElementById("category");
+let month = document.getElementById("month");
 let save = document.getElementById("submit");
 
 4
-//*get total
-//* create name property
+
+
 //* save to localstorge
 //* cleare input
 //* reading
@@ -18,7 +18,7 @@ let save = document.getElementById("submit");
 //* search
 //* clean datatype
 
-
+//* get total
 function getTotal(){
   if (income.value != ""){
     let result = +income.value - (+rent.value + +food.value + +services.value);
@@ -32,6 +32,29 @@ function getTotal(){
     total.style.background = "#a00d02"
   }
 }
+
+
+//* Save the entered data
+
+let dataPro =[];
+
+submit.onclick = function(){
+  let newPro ={
+    name:name.value,
+    income:income.value,
+    rent:rent.value,
+    food:food.value,
+    services:services.value,
+    services:services.value,
+    total:total.innerHTML,
+    category:month.value,
+  }
+  console.log (newPro)
+  
+}
+
+
+
 
 // *function getsubmit() {
 //*   return this.element;
