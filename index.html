@@ -15,13 +15,13 @@
       <h2>account object</h2>
     </div>
     <div class="inputs">
-      <input type="text" id="account-name" placeholder="Name">
+      <input type="text" id="name" placeholder="Name">
       <div class="income">
-        <input type="number" id="income" placeholder="Income">
-        <input type="number" id="rent" placeholder="Rent">
-        <input type="number" id="food" placeholder="Food">
-        <input type="number" id="Services" placeholder="Services ">
-        <small id="total">3232626</small>
+        <input onkeyup="getTotal()" type="number" id="income" placeholder="Income">
+        <input onkeyup="getTotal()" type="number" id="rent" placeholder="Rent">
+        <input onkeyup="getTotal()" type="number" id="food" placeholder="Food">
+        <input onkeyup="getTotal()" type="number" id="services" placeholder="Services">
+        <small  id="total"></small>
       </div>
       <input placeholder="Month" type="text" id="category">
       <button id="submit">Save</button>
@@ -92,7 +92,7 @@
   </div>
 
 
-  <script src="/script/script.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 
 </html>
