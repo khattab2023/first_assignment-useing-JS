@@ -25,9 +25,8 @@ function getTotal(){
     //*add + before (inbut-string)  to change to number
     total.innerHTML = result;
     total.style.background = "#040"
-  }
-  //* if i have no data Empty the writing field and return the total's color to red again
-  else{
+    //* if i have no data Empty the writing field and return the total's color to red again
+  }else{
     total.innerHTML = "";
     total.style.background = "#a00d02"
   }
@@ -35,8 +34,14 @@ function getTotal(){
 
 
 //* Save the entered data
-if (loca)
-let dataPro =[];
+
+let dataPro;
+if (localStorage.users != null){
+  dataPro = JSON.parse(localStorage.users)
+}else{
+  dataPro = [];
+}
+// *let dataPro = [];
 
 submit.onclick = function(){
   let newPro ={
@@ -47,7 +52,7 @@ submit.onclick = function(){
     services:services.value,
     services:services.value,
     total:total.innerHTML,
-    category:month.value,
+    month:month.value,
   }
   dataPro.push(newPro)
   localStorage.setItem("users",   JSON.stringify(dataPro)  )
