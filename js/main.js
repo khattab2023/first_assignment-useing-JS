@@ -10,8 +10,8 @@ let save = document.getElementById("submit");
 4
 
 
-//* save to localstorge
-//* cleare input
+
+
 //* reading
 //* delete
 //* update
@@ -33,7 +33,7 @@ function getTotal(){
 }
 
 
-//* Save the entered data
+//* Save the entered datato localstorge
 
 let dataPro;
 if (localStorage.users != null){
@@ -55,11 +55,22 @@ submit.onclick = function(){
     month:month.value,
   }
   dataPro.push(newPro)
+  //* save localstorage
   localStorage.setItem("users",   JSON.stringify(dataPro)  )
-  console.log (newPro)
-
+  cleareData()
 }
 
+//* cleare input
+
+function cleareData(){
+  name.value ="";
+  income.value ="";
+  rent.value ="";
+  food.value ="";
+  services.value ="";
+  total.innerHTML ="";
+  month.value ="";
+}
 
 
 
