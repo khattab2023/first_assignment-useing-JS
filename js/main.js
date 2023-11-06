@@ -86,7 +86,7 @@ function showData() {
     <td>${dataPro[i].total}</td>
     <td>${dataPro[i].month}</td>
     <td><button id="Update">Update</button></td>
-    <td><button id="Delete">Delete</button></td>
+    <td><button onclick="deleteData( ${i} )" id="Delete">Delete</button></td>
 </tr>
 `;
   }
@@ -94,3 +94,11 @@ function showData() {
 }
 //* to make data on scren always
 showData()
+
+
+//* delete
+
+function deleteData(i){
+  dataPro.splice(i,1);
+  localStorage.users = JSON.stringify(dataPro)
+}
