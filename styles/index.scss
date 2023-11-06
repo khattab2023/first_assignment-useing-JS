@@ -1,98 +1,98 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background: #222;
-    color: #fff;
+  background: #222;
+  color: #fff;
+  margin: auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  .account {
+    width: 80%;
     margin: auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    .account {
-        width: 80%;
-        margin: auto;
-        .head {
-            text-align: center;
-            text-transform: uppercase;
-            margin: 20px 0;
-        }
+    .head {
+      text-align: center;
+      text-transform: uppercase;
+      margin: 20px 0;
     }
-    input {
-        width: 100%;
-        height: 30px;
-        outline: none;
-        border: none;
-        background: #111;
-        color: #fff;
-        margin: 4px 0;
-        border-radius: 4px;
-        padding: 4px;
-    }
+  }
+  input {
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: none;
+    background: #111;
+    color: #fff;
+    margin: 4px 0;
+    border-radius: 4px;
+    padding: 4px;
+  }
 }
 
 input:focus {
-    background: #000;
-    transform: scale(1.1);
-    transition: 0.5s;
+  background: #000;
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 
 .income {
-    input {
-        width: 20%;
-    }
-    #total {
-        background: #a00d02;
-        padding: 5px 2px;
-        border-radius: 4px;
-    }
-    #total::before {
-        content: "Total :";
-    }
+  input {
+    width: 20%;
+  }
+  #total {
+    background: #a00d02;
+    padding: 5px 2px;
+    border-radius: 4px;
+  }
+  #total::before {
+    content: "Total :";
+  }
 }
 
 button {
-    width: 100%;
-    height: 45px;
-    margin: 4px 0;
-    border: none;
-    cursor: pointer;
-    background: #047495;
-    color: #fff;
-    font-size: 25px;
-    border-radius: 20px;
-    transition: 0.5s;
+  width: 100%;
+  height: 45px;
+  margin: 4px 0;
+  border: none;
+  cursor: pointer;
+  background: #047495;
+  color: #fff;
+  font-size: 25px;
+  border-radius: 20px;
+  transition: 0.5s;
 }
 
 button:hover {
-    background: #01516a;
-    letter-spacing: 1px;
+  background: #01516a;
+  letter-spacing: 1px;
 }
 
 .btnSearch {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    button {
-        width: 40%;
-    }
+  button {
+    width: 40%;
+  }
 }
 
 table {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 
-    th {
-        text-transform: uppercase;
-        padding: 5px;
-    }
+  th {
+    text-transform: uppercase;
+    padding: 5px;
+  }
 
-    td {
-        padding: 5px;
-        button {
-            width: 90%;
-            height: 30px;
-            font-size: 20px;
-        }
+  td {
+    padding: 5px;
+    button {
+      width: 90%;
+      height: 30px;
+      font-size: 20px;
     }
+  }
 }
