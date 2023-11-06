@@ -85,9 +85,9 @@ function showData() {
     <td>${dataPro[i].services}</td>
     <td>${dataPro[i].total}</td>
     <td>${dataPro[i].month}</td>
-   <td><button id="Update">Update</button></td>
+    <td><button id="Update">Update</button></td>
     <td><button id="Delete">Delete</button></td>
- </tr>
+</tr>
 `;
   }
   document.getElementById("tbody").innerHTML = table;
