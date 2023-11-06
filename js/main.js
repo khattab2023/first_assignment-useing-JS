@@ -101,4 +101,5 @@ showData()
 function deleteData(i){
   dataPro.splice(i,1);
   localStorage.users = JSON.stringify(dataPro)
+  showData()
 }
