@@ -88,18 +88,32 @@ function showData() {
     <td><button id="Update">Update</button></td>
     <td><button onclick="deleteData( ${i} )" id="Delete">Delete</button></td>
 </tr>
-`;
+`
   }
   document.getElementById("tbody").innerHTML = table;
+  let btndelete = document.getElementById("deleteAll");
+  if (dataPro.length > 0){
+    btndelete.innerHTML = `
+    <button onclick = "deleteAll()">Delete All</button>
+    `
+  } else {
+    btndelete.innerHTML = "";
+  }
+  
 }
-//* to make data on scren always
-showData()
+showData(); //* to show data on scren always
 
 
 //* delete
 
-function deleteData(i){
-  dataPro.splice(i,1);
-  localStorage.users = JSON.stringify(dataPro)
-  showData()
+function deleteData(i) {
+  dataPro.splice(i, 1);
+  localStorage.users = JSON.stringify(dataPro);
+  showData(); //* to refrish data on scren 
+}
+
+function deleteAll(){
+  localStorage.clear()
+  dataPro.splice(0)
+  showData(); //* to refrish data on scren 
 }
