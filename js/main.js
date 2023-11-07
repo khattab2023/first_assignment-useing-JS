@@ -16,7 +16,6 @@ let total = document.getElementById("total");
 let month = document.getElementById("month");
 let save = document.getElementById("submit");
 
-
 let mood = "create";
 let temp;
 
@@ -53,15 +52,13 @@ submit.onclick = function () {
     total: total.innerHTML,
     month: month.value,
   };
-  if(mood === "create"){
+  if (mood === "create") {
     dataPro.push(newPro);
-
-  }else{
-    dataPro[ temp ] = newPro; //* temp = index
-    mood = "create"; //* after update change mood to create 
+  } else {
+    dataPro[temp] = newPro; //* temp = index
+    mood = "create"; //* after update change mood to create
     submit.innerHTML = "create"; //* Retype the word “Create” inside the button
   }
-
 
   //* save in localstorage
   localStorage.setItem("users", JSON.stringify(dataPro));
@@ -84,7 +81,9 @@ function cleareData() {
 //* reading
 
 function showData() {
+  getTotal()
   let table = "";
+
   //*create loop
   for (let i = 0; i < dataPro.length; i++) {
     table += `
@@ -129,15 +128,19 @@ function deleteAll() {
 }
 
 //* update
-function updateData(i){
+function updateData(i) {
   name.value = dataPro[i].name;
   income.value = dataPro[i].income;
   rent.value = dataPro[i].rent;
   food.value = dataPro[i].food;
   services.value = dataPro[i].services;
-  getTotal()
+  getTotal();
   month.value = dataPro[i].month;
   submit.innerHTML = "Update";
   mood = "update";
   temp = i;
+  scroll({
+    top: 0, //* When you click Update, scroll to the top of the page
+    behavior: "smooth",
+  });
 }
