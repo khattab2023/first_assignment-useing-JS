@@ -46,12 +46,12 @@ submit.onclick = function () {
     rent: rent.value,
     food: food.value,
     services: services.value,
-    services: services.value,
     total: total.innerHTML,
     month: month.value,
   };
   dataPro.push(newPro);
-  //* save localstorage
+
+  //* save in localstorage
   localStorage.setItem("users", JSON.stringify(dataPro));
   cleareData();
   showData();
@@ -85,35 +85,44 @@ function showData() {
     <td>${dataPro[i].services}</td>
     <td>${dataPro[i].total}</td>
     <td>${dataPro[i].month}</td>
-    <td><button id="Update">Update</button></td>
+    <td><button onclick="updateData(${i})"   id="Update">Update</button></td>
     <td><button onclick="deleteData( ${i} )" id="Delete">Delete</button></td>
 </tr>
-`
+`;
   }
   document.getElementById("tbody").innerHTML = table;
   let btndelete = document.getElementById("deleteAll");
-  if (dataPro.length > 0){
+  if (dataPro.length > 0) {
     btndelete.innerHTML = `
-    <button onclick = "deleteAll()">Delete All</button>
-    `
+    <button onclick = "deleteAll ()">Delete All</button>
+    `;
   } else {
     btndelete.innerHTML = "";
   }
-  
 }
 showData(); //* to show data on scren always
-
 
 //* delete
 
 function deleteData(i) {
   dataPro.splice(i, 1);
   localStorage.users = JSON.stringify(dataPro);
-  showData(); //* to refrish data on scren 
+  showData(); //* to refrish data on scren
 }
 
-function deleteAll(){
-  localStorage.clear()
-  dataPro.splice(0)
-  showData(); //* to refrish data on scren 
+function deleteAll() {
+  localStorage.clear();
+  dataPro.splice(0);
+  showData(); //* to refrish data on scren
+}
+
+//* update
+function updateData(i){
+  name.value = dataPro[i].name;
+  income.value = dataPro[i].income;
+  rent.value = dataPro[i].rent;
+  food.value = dataPro[i].food;
+  services.value = dataPro[i].services;
+  getTotal()
+  month.value = dataPro[i].month;
 }
