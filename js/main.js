@@ -125,4 +125,5 @@ function updateData(i){
   services.value = dataPro[i].services;
   getTotal()
   month.value = dataPro[i].month;
+  submit.innerHTML = "Update";
 }
