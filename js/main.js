@@ -16,6 +16,9 @@ let total = document.getElementById("total");
 let month = document.getElementById("month");
 let save = document.getElementById("submit");
 
+
+let mood = "create";
+let temp;
 //* get total
 function getTotal() {
   if (income.value != "") {
@@ -49,6 +52,12 @@ submit.onclick = function () {
     total: total.innerHTML,
     month: month.value,
   };
+  if(mood === "create"){
+    dataPro.push(newPro);
+
+  }else{
+    DataTransfer[     ] = newPro
+  }
   dataPro.push(newPro);
 
   //* save in localstorage
