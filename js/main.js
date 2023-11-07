@@ -151,9 +151,20 @@ function updateData(i) {
 let searchMood = "name";
 let search = document.getElementById("search")
 function getsearchMood(id){
+if (id == "searchTitle"){
+  searchMood = "name";
+  search.placeholder = "Search by name"; //* when clike on button show (search by name
+
+}else{
+  searchMood = "Month";
+  search.placeholder = "Search by month"; //* when clike on button show (search by month)
+
 
 }
 search.focus()
 
 //* console.log(searchMood)
+}
+function searchData(){
+  
 }
