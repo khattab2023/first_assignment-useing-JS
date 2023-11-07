@@ -45,13 +45,13 @@ if (localStorage.users != null) {
 
 submit.onclick = function () {
   let newPro = {
-    name: name.value,
+    name: name.value.toLowerCase(),
     income: income.value,
     rent: rent.value,
     food: food.value,
     services: services.value,
     total: total.innerHTML,
-    month: month.value,
+    month: month.value.toLowerCase(),
   };
   if (mood === "create") {
     dataPro.push(newPro);
@@ -174,7 +174,7 @@ let table = "";
   if(searchMood == "name")
   {
     for(let i = 0; i < dataPro.length;i++){
-      if(dataPro[i].name.toLocaleLowerCase().includes(value)){
+      if(dataPro[i].name.includes(value)){
         table += `
         <tr>
             <td>${i}</td>
@@ -196,7 +196,7 @@ let table = "";
 
   else{
     for(let i = 0; i < dataPro.length;i++){
-      if(dataPro[i].month.toLocaleLowerCase().includes(value)){
+      if(dataPro[i].month.includes(value)){
         table += `
         <tr>
             <td>${i}</td>
