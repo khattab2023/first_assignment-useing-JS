@@ -19,6 +19,7 @@ let save = document.getElementById("submit");
 let mood = "create";
 let temp;
 
+
 //* get total
 function getTotal() {
   if (income.value != "") {
@@ -143,4 +144,16 @@ function updateData(i) {
     top: 0, //* When you click Update, scroll to the top of the page
     behavior: "smooth",
   });
+}
+
+
+//* search
+let searchMood = "name";
+let search = document.getElementById("search")
+function getsearchMood(id){
+
+}
+search.focus()
+
+//* console.log(searchMood)
 }
