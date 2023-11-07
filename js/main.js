@@ -19,6 +19,7 @@ let save = document.getElementById("submit");
 
 let mood = "create";
 let temp;
+
 //* get total
 function getTotal() {
   if (income.value != "") {
@@ -56,9 +57,11 @@ submit.onclick = function () {
     dataPro.push(newPro);
 
   }else{
-    DataTransfer[     ] = newPro
+    dataPro[ temp ] = newPro; //* temp = index
+    mood = "create"; //* after update change mood to create 
+    submit.innerHTML = "create"; //* Retype the word “Create” inside the button
   }
-  dataPro.push(newPro);
+
 
   //* save in localstorage
   localStorage.setItem("users", JSON.stringify(dataPro));
@@ -135,4 +138,6 @@ function updateData(i){
   getTotal()
   month.value = dataPro[i].month;
   submit.innerHTML = "Update";
+  mood = "update";
+  temp = i;
 }
