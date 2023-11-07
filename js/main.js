@@ -154,17 +154,72 @@ function getsearchMood(id){
 if (id == "searchTitle"){
   searchMood = "name";
   search.placeholder = "Search by name"; //* when clike on button show (search by name
-
 }else{
   searchMood = "Month";
   search.placeholder = "Search by month"; //* when clike on button show (search by month)
-
-
 }
 search.focus()
 
 //* console.log(searchMood)
 }
-function searchData(){
-  
+
+
+
+
+function searchData(value)
+{
+
+  // console.log(value)
+let table = "";
+  if(searchMood == "name")
+  {
+    for(let i = 0; i < dataPro.length;i++){
+      if(dataPro[i].name.toLocaleLowerCase().includes(value)){
+        table += `
+        <tr>
+            <td>${i}</td>
+            <td>${dataPro[i].name}</td>
+            <td>${dataPro[i].income}</td>
+            <td>${dataPro[i].rent}</td>
+            <td>${dataPro[i].food}</td>
+            <td>${dataPro[i].services}</td>
+            <td>${dataPro[i].total}</td>
+            <td>${dataPro[i].month}</td>
+            <td><button onclick="updateData(${i})"   id="Update">Update</button></td>
+            <td><button onclick="deleteData( ${i} )" id="Delete">Delete</button></td>
+        </tr>
+        `;
+        //* console.log(i)
+      }
+    }//* create loop for all element in array
+  }
+
+  else{
+    for(let i = 0; i < dataPro.length;i++){
+      if(dataPro[i].month.toLocaleLowerCase().includes(value)){
+        table += `
+        <tr>
+            <td>${i}</td>
+            <td>${dataPro[i].name}</td>
+            <td>${dataPro[i].income}</td>
+            <td>${dataPro[i].rent}</td>
+            <td>${dataPro[i].food}</td>
+            <td>${dataPro[i].services}</td>
+            <td>${dataPro[i].total}</td>
+            <td>${dataPro[i].month}</td>
+            <td><button onclick="updateData(${i})"   id="Update">Update</button></td>
+            <td><button onclick="deleteData( ${i} )" id="Delete">Delete</button></td>
+        </tr>
+        `;
+        
+      }
+    }//* create loop for all element in array
+  }
+  document.getElementById("tbody").innerHTML = table;
 }
+
+
+
+
+
+
